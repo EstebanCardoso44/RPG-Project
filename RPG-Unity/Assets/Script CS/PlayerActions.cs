@@ -66,4 +66,16 @@ public class PlayerActions : MonoBehaviour
   {
     horizontal = context.ReadValue<Vector2>().x;
   }
+  public void Attack(InputAction.CallbackContext context)
+  {
+    animator.SetTrigger("Attack");
+  }
+  public void Strike(InputAction.CallbackContext context)
+  {
+    animator.SetTrigger("Strike");
+  }
+  public void Cast(InputAction.CallbackContext context)
+  {
+    animator.SetTrigger("Cast");
+  }
 }
