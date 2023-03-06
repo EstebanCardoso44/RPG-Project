@@ -12,7 +12,14 @@ public class MainMenu : MonoBehaviour
     {
 
     }
-
+  }
+  public void Level1()
+  {
+    SceneManager.LoadScene("Village1");
+  }
+  public void Level2()
+  {
+    SceneManager.LoadScene("Dungeon1");
   }
   public void Quit()
   {
