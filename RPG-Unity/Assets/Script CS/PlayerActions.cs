@@ -93,6 +93,11 @@ public class PlayerActions : MonoBehaviour
   void OnMove(InputValue movementValue)
   {
     movement = movementValue.Get<Vector2>();
+    if (movement != Vector2.zero)
+    {
+      animator.SetFloat("XInput", movement.x);
+      animator.SetFloat("YInput", movement.y);
+    }
 
   }
   void OnAttackSide()
