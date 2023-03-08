@@ -1,81 +1,113 @@
-using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using System;
+using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-  public Rigidbody2D rb;
-  public Transform groundCheck;
-  public LayerMask groundLayer;
+  // Start is called before the first frame update
+  public float moveSpeed = 1f;
+  public float collisionOffset = 0.05f;
+  public ContactFilter2D movementFilter;
+  Vector2 movement;
+  Rigidbody2D rb;
+  List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+  Animator animator;
+  SpriteRenderer spriteRenderer;
 
-  public Animator animator;
+  bool canMove = true;
+  void Start()
+  {
+    rb = GetComponent<Rigidbody2D>();
+    animator = GetComponent<Animator>();
+    spriteRenderer = GetComponent<SpriteRenderer>();
+  }
 
-  private float horizontal;
-  private float speed = 2f;
-  private float jumpingPower = 4f;
-  private bool isFacingRight = true;
-
+  // Update is called once per frame
   void Update()
   {
-    animator.SetFloat("Speed", Math.Abs(horizontal)); // link between our variable horizontal and our paramameters for animations in animator 
 
-    if (!isFacingRight && horizontal > 0f)
-    {
-      Flip();
-    }
-    else if (isFacingRight && horizontal < 0f)
-    {
-      Flip();
-    }
   }
-
   private void FixedUpdate()
   {
-    rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-  }
-
-  public void Jump(InputAction.CallbackContext context)
-  {
-    if (context.performed && IsGrounded())
+    if (canMove)
     {
-      rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-      animator.SetBool("IsJumping", false);
-    }
+      if (movement != Vector2.zero)
+      {
+        bool success = TryMove(movement);
+        if (!success)
+        {
+          success = TryMove(new Vector2(movement.x, 0));
 
-    if (context.canceled && rb.velocity.y > 0f)
+          if (!success)
+          {
+            success = TryMove(new Vector2(movement.y, 0));
+          }
+        }
+        animator.SetBool("IsMoving", success);
+      }
+      else
+      {
+        animator.SetBool("IsMoving", false);
+      }
+      if (movement.x < 0)
+      {
+        spriteRenderer.flipX = true;
+      }
+      else if (movement.x > 0)
+      {
+        spriteRenderer.flipX = false;
+      }
+    }
+  }
+
+
+
+
+  private bool TryMove(Vector2 direction)
+  {
+    if (direction != Vector2.zero)
     {
-      rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-      animator.SetBool("IsJumping", true);
+      int count = rb.Cast(
+        direction,
+        movementFilter,
+        castCollisions,
+      moveSpeed * Time.fixedDeltaTime + collisionOffset
+        );
+      if (count == 0)
+      {
+        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    else
+    {
+      return false;
     }
   }
 
-  private bool IsGrounded()
+  void OnMove(InputValue movementValue)
   {
-    return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    movement = movementValue.Get<Vector2>();
+
+  }
+  void OnAttackSide()
+  {
+    animator.SetTrigger("AttackSide");
   }
 
-  private void Flip()
+  void LockMove()
   {
-    isFacingRight = !isFacingRight;
-    Vector3 localScale = transform.localScale;
-    localScale.x *= -1f;
-    transform.localScale = localScale;
+    canMove = false;
+  }
+  void UnLockMove()
+  {
+    canMove = true;
   }
 
-  public void Move(InputAction.CallbackContext context)
-  {
-    horizontal = context.ReadValue<Vector2>().x;
-  }
-  public void Attack(InputAction.CallbackContext context)
-  {
-    animator.SetTrigger("Attack");
-  }
-  public void Strike(InputAction.CallbackContext context)
-  {
-    animator.SetTrigger("Strike");
-  }
-  public void Cast(InputAction.CallbackContext context)
-  {
-    animator.SetTrigger("Cast");
-  }
 }
+
