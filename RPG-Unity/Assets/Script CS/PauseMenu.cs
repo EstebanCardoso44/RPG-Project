@@ -19,13 +19,13 @@ public class PauseMenu : MonoBehaviour
   {
     if (Input.GetKeyDown(KeyCode.Escape))
     {
-      pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
+      pauseMenu.SetActive(true);
       Time.timeScale = 0f;
     }
   }
   public void Resume()
   {
-    pauseMenu.gameObject.SetActive(false);
+    pauseMenu.SetActive(false);
     Time.timeScale = 1f;
   }
   public void MenuPrincipal()
