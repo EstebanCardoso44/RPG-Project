@@ -9,11 +9,8 @@ public class MainMenu : MonoBehaviour
   public void Play()
   {
     SceneManager.LoadScene("Village1");
-    {
-
-    }
   }
-  public void Level1()
+  public void Level1() // Move to a certain scene
   {
     SceneManager.LoadScene("Village1");
   }
@@ -21,7 +18,7 @@ public class MainMenu : MonoBehaviour
   {
     SceneManager.LoadScene("Dungeon1");
   }
-  public void Quit()
+  public void Quit() // quit game
   {
     Application.Quit();
   }

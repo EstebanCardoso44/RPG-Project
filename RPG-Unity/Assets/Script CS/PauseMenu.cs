@@ -17,18 +17,18 @@ public class PauseMenu : MonoBehaviour
   // || Input.GetButton("Start"))
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Escape))
+    if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) //key pressed activate code
     {
-      pauseMenu.SetActive(true);
-      Time.timeScale = 0f;
+      pauseMenu.SetActive(true); // active PauseMenu in game
+      Time.timeScale = 0f; //Freeze game
     }
   }
-  public void Resume()
+  public void Resume()//unfreeze + disapear menu
   {
     pauseMenu.SetActive(false);
     Time.timeScale = 1f;
   }
-  public void MenuPrincipal()
+  public void MenuPrincipal() //get to main menu from pause menu
   {
     Time.timeScale = 1f;
     SceneManager.LoadScene("MainMenu");

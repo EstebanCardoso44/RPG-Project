@@ -30,27 +30,26 @@ public class PlayerActions : MonoBehaviour
   }
   private void FixedUpdate()
   {
-    if (canMove)
+    if (canMove)// if not doing animation who lock
     {
       if (movement != Vector2.zero)
       {
         bool success = TryMove(movement);
-        if (!success)
+        if (success == false)//conditions allow us to slide 
         {
           success = TryMove(new Vector2(movement.x, 0));
-
-          if (!success)
-          {
-            success = TryMove(new Vector2(movement.y, 0));
-          }
         }
-        animator.SetBool("IsMoving", success);
+        if (success == false)
+        {
+          success = TryMove(new Vector2(0, movement.y));
+        }
+        animator.SetBool("IsMoving", success);// activate IsMoving , condition for our character to run 
       }
       else
       {
-        animator.SetBool("IsMoving", false);
+        animator.SetBool("IsMoving", false);// our char isn't running
       }
-      if (movement.x < 0)
+      if (movement.x < 0)// flip the char (side)
       {
         spriteRenderer.flipX = true;
       }
@@ -69,14 +68,16 @@ public class PlayerActions : MonoBehaviour
     if (direction != Vector2.zero)
     {
       int count = rb.Cast(
-        direction,
-        movementFilter,
-        castCollisions,
-      moveSpeed * Time.fixedDeltaTime + collisionOffset
+        direction,//direction where cast collider2D
+        movementFilter, //filter result
+        castCollisions, // array who receive result
+      moveSpeed * Time.fixedDeltaTime + collisionOffset // distance cast collider
         );
-      if (count == 0)
+      if (count == 0) // no collision so move 
       {
         rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        //Time.fixedDeltaTime frame in time game ,
+        // more accurate than irl time
         return true;
       }
       else
@@ -90,7 +91,7 @@ public class PlayerActions : MonoBehaviour
     }
   }
 
-  void OnMove(InputValue movementValue)
+  void OnMove(InputValue movementValue) // set our x/y when main character move 
   {
     movement = movementValue.Get<Vector2>();
     if (movement != Vector2.zero)
@@ -100,16 +101,16 @@ public class PlayerActions : MonoBehaviour
     }
 
   }
-  void OnAttackSide()
+  void OnAttackSide() // Attack animation on trigger
   {
     animator.SetTrigger("AttackSide");
   }
 
-  void LockMove()
+  void LockMove() // lock to prevent attack while running
   {
     canMove = false;
   }
-  void UnLockMove()
+  void UnLockMove() // delock at the end of the animation ( done via adding event on the animation on Unity)
   {
     canMove = true;
   }

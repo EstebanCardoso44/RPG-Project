@@ -12747,6 +12747,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4124567505131938402, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_Name
+      value: Commands title
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505131938403, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505131938403, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505131938404, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_text
+      value: 'Manette :'
+      objectReference: {fileID: 0}
     - target: {fileID: 4124567505485780437, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -12835,9 +12851,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4124567505571950604, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505966015067, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505966015067, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 135.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505966015067, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 329.2041
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505966015067, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505966015067, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -212
+      objectReference: {fileID: 0}
     - target: {fileID: 4124567505998892059, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4124567505998892061, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567505998892061, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.47058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124567506883005532, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4124567505966015068, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+--- !u!1 &4124567507219736865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4124567505966015066, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+  m_PrefabInstance: {fileID: 4124567507219736864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4124567507219736866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4124567507219736865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 09eaf1e6436f2dc4f83969fd8336d20c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1

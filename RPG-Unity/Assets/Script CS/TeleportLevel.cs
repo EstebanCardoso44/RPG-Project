@@ -10,7 +10,7 @@ public class TeleportLevel : MonoBehaviour
 
   // Update is called once per frame
 
-  void OnTriggerEnter2D(Collider2D other)
+  void OnTriggerEnter2D(Collider2D other)//when collide teleport 
   {
     print("Vous entrer dans un donjon !");
     if (other.tag == "Player")
