@@ -15,9 +15,10 @@ public class PauseMenu : MonoBehaviour
 
   // Update is called once per frame
   // || Input.GetButton("Start"))
+  // Input.GetButtonDown("startButton"))
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start")) //key pressed activate code
+    if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) //key pressed activate code
     {
       pauseMenu.SetActive(true); // active PauseMenu in game
       Time.timeScale = 0f; //Freeze game
