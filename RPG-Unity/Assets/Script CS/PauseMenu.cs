@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
   }
 
   // Update is called once per frame
- 
+
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) //key pressed activate code
