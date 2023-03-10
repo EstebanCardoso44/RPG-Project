@@ -8,13 +8,14 @@ public class PauseMenu : MonoBehaviour
 {
   // Start is called before the first frame update
   public GameObject pauseMenu;
+
   void Start()
   {
 
   }
 
   // Update is called once per frame
- 
+
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) //key pressed activate code
@@ -26,6 +27,7 @@ public class PauseMenu : MonoBehaviour
   public void Resume()//unfreeze + disapear menu
   {
     pauseMenu.SetActive(false);
+
     Time.timeScale = 1f;
   }
   public void MenuPrincipal() //get to main menu from pause menu
