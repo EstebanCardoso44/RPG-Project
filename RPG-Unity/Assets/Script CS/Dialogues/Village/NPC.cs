@@ -27,6 +27,11 @@ public class NPC : MonoBehaviour
             manager.continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
             manager.continueButton.GetComponent<Button>().onClick.AddListener(delegate { NextLine(); });
         }
+
+        if (isOnDialogue && Input.GetKeyDown(KeyCode.F))
+        {
+            CloseDialogue();
+        }
     }
 
     public void StartDialogue()
@@ -55,6 +60,7 @@ public class NPC : MonoBehaviour
     }
     
     public void NextLine(){
+        manager.continueButton.SetActive(false);
         if (isOnDialogue && index < sentences.Length - 1)
         {
             index++;
@@ -86,6 +92,18 @@ public class NPC : MonoBehaviour
         {
             canDialogue = false;
         }
+    }   
+
+    //close dialogue
+    public void CloseDialogue()
+    {
+        manager.dialogueHolder.SetActive(false);
+        isOnDialogue = false;
+        index = 0;
+        manager.textDisplay.text = "";
+        manager.nameDisplay.text = "";
+        manager.dialoguePortrait.sprite = null;
     }
+
 
 }
