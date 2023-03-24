@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
   // Start is called before the first frame update
-  private float health = 0f;
-  [SerializeField] private float maxHealth = 100f;
+  public float health = 0f;
+  public float maxHealth = 100f;
   void Start()
   {
     health = maxHealth;
