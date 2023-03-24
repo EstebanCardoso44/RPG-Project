@@ -27,15 +27,21 @@ public class NPC : MonoBehaviour
             manager.continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
             manager.continueButton.GetComponent<Button>().onClick.AddListener(delegate { NextLine(); });
         }
+            if (isOnDialogue && Input.GetKeyDown(KeyCode.R))
+            {
+                NextLine();
+            }
 
         if (isOnDialogue && Input.GetKeyDown(KeyCode.F))
         {
+
             CloseDialogue();
         }
     }
 
     public void StartDialogue()
     {
+        Debug.Log("Start Dialogue");
         manager.dialogueHolder.SetActive(true);
         isOnDialogue = true;
         TypingText(sentences);
@@ -99,6 +105,7 @@ public class NPC : MonoBehaviour
     {
         manager.dialogueHolder.SetActive(false);
         isOnDialogue = false;
+        canDialogue = true;
         index = 0;
         manager.textDisplay.text = "";
         manager.nameDisplay.text = "";
