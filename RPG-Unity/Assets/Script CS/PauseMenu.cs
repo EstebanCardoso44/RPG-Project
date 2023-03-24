@@ -25,8 +25,7 @@ public class PauseMenu : MonoBehaviour
   }
   public void Resume()//unfreeze + disapear menu
   {
-    pauseMenu.SetActive(false);
-
+    //pauseMenu.SetActive(false);
     Time.timeScale = 1f;
   }
   public void MenuPrincipal() //get to main menu from pause menu

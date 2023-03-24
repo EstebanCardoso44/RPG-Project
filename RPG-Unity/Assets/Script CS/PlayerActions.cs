@@ -120,28 +120,28 @@ public class PlayerActions : MonoBehaviour
   public void SwordAttack()
   {
     LockMove();
-    /* if (movement.x == 0 && movement.y == 0)
-     {
-       switch (lastFacing)
-       {
-         case 1:
-           swordAttack.AttackLeft();
-           break;
+    if (movement.x == 0 && movement.y == 0)
+    {
+      switch (lastFacing)
+      {
+        case 1:
+          swordAttack.AttackLeft();
+          break;
 
-         case 2:
-           swordAttack.AttackRight();
-           break;
+        case 2:
+          swordAttack.AttackRight();
+          break;
 
-         case 3:
-           swordAttack.AttackUp();
-           break;
+        case 3:
+          swordAttack.AttackUp();
+          break;
 
-         case 4:
-           swordAttack.AttackDown();
-           break;
-       }
-     }*/
-    if (movement.x < 0)
+        case 4:
+          swordAttack.AttackDown();
+          break;
+      }
+    }
+    else if (movement.x < 0)
     {
       swordAttack.AttackLeft();
     }
