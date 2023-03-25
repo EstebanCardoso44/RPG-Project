@@ -21,18 +21,18 @@ public class NPC : MonoBehaviour
 
     private void Update()
     {
-        if (canDialogue && Input.GetKeyDown(KeyCode.E))
+        if (canDialogue && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton3)))
         {
             StartDialogue();
             manager.continueButton.GetComponent<Button>().onClick.RemoveAllListeners();
             manager.continueButton.GetComponent<Button>().onClick.AddListener(delegate { NextLine(); });
         }
-            if (isOnDialogue && Input.GetKeyDown(KeyCode.R))
+            if (isOnDialogue && (Input.GetKeyDown(KeyCode.R)|| Input.GetKeyDown(KeyCode.JoystickButton0)))
             {
                 NextLine();
             }
 
-        if (isOnDialogue && Input.GetKeyDown(KeyCode.F))
+        if (isOnDialogue && (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton1)))
         {
 
             CloseDialogue();
