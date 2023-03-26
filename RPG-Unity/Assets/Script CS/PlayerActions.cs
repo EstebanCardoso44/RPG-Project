@@ -99,6 +99,7 @@ public class PlayerActions : MonoBehaviour
       animator.SetFloat("XInput", movement.x);
       animator.SetFloat("YInput", movement.y);
     }
+    Debug.Log("coucou");
 
   }
   void OnAttackSide() // Attack animation on trigger
