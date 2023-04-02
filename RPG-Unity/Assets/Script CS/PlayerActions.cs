@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using Microsoft.Win32;
 
 public class PlayerActions : MonoBehaviour
 {
   // Start is called before the first frame update
   public float moveSpeed = 5f;
   public float collisionOffset = 0.05f;
+
+  public int lastFacing;
   public ContactFilter2D movementFilter;
   Vector2 movement;
   Rigidbody2D rb;
   List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
   Animator animator;
   SpriteRenderer spriteRenderer;
+  public SwordAttack swordAttack;
 
   bool canMove = true;
   void Start()
@@ -52,16 +56,23 @@ public class PlayerActions : MonoBehaviour
       if (movement.x < 0)// flip the char (side)
       {
         spriteRenderer.flipX = true;
+        lastFacing = 1;
       }
       else if (movement.x > 0)
       {
         spriteRenderer.flipX = false;
+        lastFacing = 2;
+      }
+      else if (movement.y > 0)
+      {
+        lastFacing = 3;
+      }
+      else if (movement.y < 0)
+      {
+        lastFacing = 4;
       }
     }
   }
-
-
-
 
   private bool TryMove(Vector2 direction)
   {
@@ -102,11 +113,57 @@ public class PlayerActions : MonoBehaviour
     Debug.Log("coucou");
 
   }
-  void OnAttackSide() // Attack animation on trigger
+  public void OnAttack() // Attack animation on trigger
   {
-    animator.SetTrigger("AttackSide");
+    animator.SetTrigger("Attack");
+    swordAttack.swordCollider.enabled = true;
   }
+  public void SwordAttack()
+  {
+    LockMove();
+    if (movement.x == 0 && movement.y == 0)
+    {
+      switch (lastFacing)
+      {
+        case 1:
+          swordAttack.AttackLeft();
+          break;
 
+        case 2:
+          swordAttack.AttackRight();
+          break;
+
+        case 3:
+          swordAttack.AttackUp();
+          break;
+
+        case 4:
+          swordAttack.AttackDown();
+          break;
+      }
+    }
+    else if (movement.x < 0)
+    {
+      swordAttack.AttackLeft();
+    }
+    else if (movement.x > 0)
+    {
+      swordAttack.AttackRight();
+    }
+    else if (movement.y < 0)
+    {
+      swordAttack.AttackDown();
+    }
+    else if (movement.y > 0)
+    {
+      swordAttack.AttackUp();
+    }
+  }
+  public void SwordStop()
+  {
+    UnLockMove();
+    swordAttack.AttackStop();
+  }
   void LockMove() // lock to prevent attack while running
   {
     canMove = false;

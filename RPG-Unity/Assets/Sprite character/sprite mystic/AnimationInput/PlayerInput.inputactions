@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "AttackSide",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "0824490a-76af-48b6-a275-2c7c9ec3220d",
                     "expectedControlType": "Button",
@@ -149,7 +149,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "AttackSide",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -160,7 +160,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "AttackSide",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
