@@ -514,7 +514,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &486935441
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,8 +619,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillBar: {fileID: 934417563}
   playerHealth: {fileID: 1820804369}
-=======
->>>>>>> origin/yass
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1222,6 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040335387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1286,15 +1282,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-=======
-  m_LocalPosition: {x: 8.98, y: 2.81, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> origin/yass
 --- !u!1 &1189432644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,7 +4062,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &1689379035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,8 +4201,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   target: {fileID: 0}
-=======
->>>>>>> origin/yass
 --- !u!1 &1737705141
 GameObject:
   m_ObjectHideFlags: 0
@@ -14160,8 +14144,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c8aa671e361f847821f742f59410ef, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1001 &6159694253266691191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14324,4 +14306,3 @@ PrefabInstance:
       objectReference: {fileID: 198997572976544804, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
->>>>>>> origin/yass
