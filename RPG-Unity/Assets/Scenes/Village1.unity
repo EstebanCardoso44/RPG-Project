@@ -1173,8 +1173,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6159769879422155949, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159769879422155949, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159769879422155949, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 750216015}
+    - target: {fileID: 6159769879422155949, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159769879422155949, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159769879422155949, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396830350012498819, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 750216015}
+    - target: {fileID: 6396830350012498819, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MenuPrincipal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+--- !u!114 &750216015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 570898243289384088, guid: 1fda8fc8f5cc0624682a8b4e2f42845f, type: 3}
+  m_PrefabInstance: {fileID: 750216014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53f1d22764e4084e8055c6646b6fc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &770962066
 PrefabInstance:
   m_ObjectHideFlags: 0
