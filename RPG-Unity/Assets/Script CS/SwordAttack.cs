@@ -25,25 +25,21 @@ public class SwordAttack : MonoBehaviour
 
   public void AttackRight()
   {
-    print("attack right");
     swordCollider.enabled = true;
     transform.localPosition = attackPos;
   }
   public void AttackLeft()
   {
-    print("attack left");
     swordCollider.enabled = true;
     transform.localPosition = new Vector3(attackPos.x - 0.15f, attackPos.y);
   }
   public void AttackUp()
   {
-    print("attack up");
     swordCollider.enabled = true;
     transform.localPosition = new Vector3(attackPos.x - 0.09f, attackPos.y + 0.10f);
   }
   public void AttackDown()
   {
-    print("attack down");
     swordCollider.enabled = true;
     transform.localPosition = new Vector3(attackPos.x - 0.09f, attackPos.y - 0.10f);
   }
