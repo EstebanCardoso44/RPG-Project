@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
   // Start is called before the first frame update
+  public GameObject resumeButton, commandButton, closeButton, mainMenu;
   public GameObject pauseMenu;
 
   void Start()
@@ -27,10 +29,20 @@ public class PauseMenu : MonoBehaviour
   {
     pauseMenu.SetActive(false);
     Time.timeScale = 1f;
+    EventSystem.current.SetSelectedGameObject(resumeButton);
+  }
+  public void CloseButton()
+  {
+    EventSystem.current.SetSelectedGameObject(closeButton);
+  }
+  public void Command()
+  {
+    EventSystem.current.SetSelectedGameObject(commandButton);
   }
   public void MenuPrincipal() //get to main menu from pause menu
   {
     Time.timeScale = 1f;
     SceneManager.LoadScene("MainMenu");
+    EventSystem.current.SetSelectedGameObject(mainMenu);
   }
 }
